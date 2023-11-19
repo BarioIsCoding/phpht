@@ -1,3 +1,41 @@
+# Phpht - The Best Discord Bypass Tool
+
+Phpht is a powerful Discord bypass tool that can execute many commands and bypass Discord bans.
+
+
+# BanBypass - The Ultimate Discord Ban Bypass
+
+BanBypass is a powerful Discord ban bypass that automatically generates an account and rejoins servers that you're banned in. It shows a notification every time you get banned or kicked in a server
+
+## Commands
+
+### /antiban
+Toggles the AntiBan feature
+
+### /antikick
+Toggles the auto rejoin feature on kick
+
+### /gen
+Generates a Discord account
+
+
+# Stickies - The Message Spammer
+
+Stickies - also refered to as "Sticky", is a powerful selfbot tool that allows any user to generate sticky messages
+
+## Commands
+
+### /stickies_toggle
+
+Toggles sticky message
+
+### /ssticky
+
+Sets the sticky message
+
+# GroupTools - The Perfect Discord Group DM Manager
+
+
 # Nighttweaks - The Ultimate Discord Selfbot
 
 Nighttweaks is a powerful Discord selfbot that enhances your Discord experience with a wide range of useful commands. Whether you want to automate tasks, customize your messages, or simply have more control over your Discord client, Nighttweaks has got you covered.
