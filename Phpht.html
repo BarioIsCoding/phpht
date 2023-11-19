@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phpht Selection Panel</title>
+<style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #222222;
+            border-radius: 10px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-input {
+            display: none;
+        }
+
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #222222;
+            border-radius: 5px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        /* Modified selector for the checked state with adjusted checkmark position */
+        .checkbox-input:checked + .custom-checkbox .checkmark::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 6px; /* Adjusted for a more rightward position */
+            width: 5px;
+            height: 10px;
+            border: solid #00FF00;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Enhanced glow effect when checked */
+        .checkbox-input:checked + .custom-checkbox .checkmark {
+            border-color: #00FF00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Stronger glow effect */
+        }
+
+
+
+        .checkmark {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .checkbox-container:hover .checkmark {
+            border-color: #00FF00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!-- Checkbox 1 -->
+<div class="checkbox-container">
+<label class="checkbox-label" for="checkbox1">
+<input class="checkbox-input" id="checkbox1" type="checkbox"/>
+<div class="custom-checkbox">
+<div class="checkmark"></div>
+</div>
+                Ban Bypass
+            </label>
+</div>
+<!-- Checkbox 1 -->
+<div class="checkbox-container">
+<label class="checkbox-label" for="checkbox2">
+<input class="checkbox-input" id="checkbox2" type="checkbox"/>
+<div class="custom-checkbox">
+<div class="checkmark"></div>
+</div>
+                Use NightTweaks
+            </label>
+</div>
+<!-- Checkbox 3 -->
+<div class="checkbox-container">
+<label class="checkbox-label" for="checkbox3">
+<input class="checkbox-input" id="checkbox3" type="checkbox"/>
+<div class="custom-checkbox">
+<div class="checkmark"></div>
+</div>
+                Use GroupTools
+            </label>
+</div>
+<!-- Checkbox 4 -->
+<div class="checkbox-container">
+<label class="checkbox-label" for="checkbox4">
+<input class="checkbox-input" id="checkbox4" type="checkbox"/>
+<div class="custom-checkbox">
+<div class="checkmark"></div>
+</div>
+                Stickies
+            </label>
+</div>
+<button type="submit">Submit</button></div><script src="BanBypass.py">
+function runScript(scriptName) {
+    fetch('/run_' + scriptName)
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => console.error('Error:', error));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.script-button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var scriptName = this.getAttribute('data-script');
+            runScript(scriptName);
+        });
+    });
+});
+</script><script src="NightTweaks.py"></script><script src="GroupTools.py"></script><script src="Sticky.py"></script>
+<script>
+    function runScript(scriptName) {
+        fetch('/run_' + scriptName)
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Error:', error));
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('button[type="submit"]').addEventListener('click', function() {
+            if (document.getElementById('checkbox1').checked) {
+                runScript('banbypass');
+            }
+            if (document.getElementById('checkbox2').checked) {
+                runScript('nighttweaks');
+            }
+            if (document.getElementById('checkbox3').checked) {
+                runScript('grouptools');
+            }
+            if (document.getElementById('checkbox4').checked) {
+                runScript('sticky');
+            }
+        });
+    });
+    </script>
+    
+</body>
+</html>
