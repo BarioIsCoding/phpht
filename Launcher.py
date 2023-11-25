@@ -5,10 +5,10 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 class CustomBrowser(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Phpht")  # Set the window title
-        self.browser = QWebEngineView()  # Create a web engine view
+        self.setWindowTitle("Phpht")  # Phpht
+        self.browser = QWebEngineView()  # Custom Browser
         self.setCentralWidget(self.browser)
-        self.browser.setUrl(QUrl("http://127.0.0.1:5000"))  # Set the URL here
+        self.browser.setUrl(QUrl("http://127.0.0.1:5000"))  # URL
 
 if __name__ == "__main__":
     app = QApplication([])

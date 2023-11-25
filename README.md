@@ -25,6 +25,9 @@ Stickies - also refered to as "Sticky", is a powerful selfbot tool that allows a
 
 ## Commands
 
+### /stickies_toggle
+Toggles sticky message
+
 ### /ssticky
 Sets the sticky message
 

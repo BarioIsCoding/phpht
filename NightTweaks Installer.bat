@@ -1,19 +1,45 @@
 @echo off
+echo Installing... This might take a minute
+echo Installing discord.py... 1/10
+pip install discord.py
+echo discord.py installed.
 
-REM Install required Python modules
-echo Installing required Python modules...
-echo Installing Discord.py
-pip install discord==1.7.3
-echo Installing URLlib3
+echo Installing urllib3... 2/10
 pip install urllib3
-echo Installing TQDM
+echo urllib3 installed.
+
+echo Installing tkinter... 3/10
+pip install tk
+echo tkinter installed.
+
+echo Installing PyQt5... 4/10
+pip install PyQt5
+echo PyQt5 installed.
+
+echo Installing PyQtWebEngine... 5/10
+pip install PyQtWebEngine
+echo PyQtWebEngine installed.
+
+echo Installing tqdm... 6/10
 pip install tqdm
-echo Installing Asyncio
-pip install asyncio
-echo installing Re
-pip install re
-echo installing tkinter
-pip install tkinter
-echo Downloaded all packages..
-echo Done.
+echo tqdm installed.
+
+echo Installing requests... 7/10
+pip install requests
+echo requests installed.
+
+echo Installing beautifulsoup4... 8/10
+pip install beautifulsoup4
+echo beautifulsoup4 installed.
+
+echo Installing lxml... 9/10
+pip install lxml
+echo lxml installed.
+
+echo Installing numpy... 10/10
+pip install numpy
+echo numpy installed.
+
+echo Installation complete.
+echo You might now run !RUN.py
 pause
