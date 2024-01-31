@@ -1,45 +1,88 @@
 @echo off
-echo Installing... This might take a minute
-echo Installing discord.py... 1/10
-pip install discord.py
-echo discord.py installed.
+SETLOCAL EnableDelayedExpansion
 
-echo Installing urllib3... 2/10
+SET /a "count=0"
+SET /a "total=15"
+
+echo Installing necessary Python modules...
+
+echo [0%%] Starting installation...
+
+pip install discord.py==1.7.3
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed discord.py 1.7.3...
+
+pip install discord==1.7.3
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed discord 1.7.3...
+
+:: 'tkinter' typically comes with Python. Uncomment below if needed.
+:: pip install tk
+:: SET /a "count+=1"
+:: SET /a "calcPercent=count*100/total"
+:: echo [!calcPercent!%%] Installed tk...
+
 pip install urllib3
-echo urllib3 installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed urllib3...
 
-echo Installing tkinter... 3/10
-pip install tk
-echo tkinter installed.
-
-echo Installing PyQt5... 4/10
 pip install PyQt5
-echo PyQt5 installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed PyQt5...
 
-echo Installing PyQtWebEngine... 5/10
 pip install PyQtWebEngine
-echo PyQtWebEngine installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed PyQtWebEngine...
 
-echo Installing tqdm... 6/10
+pip install keyboard
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed keyboard...
+
+pip install pyautogui
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed pyautogui...
+
+pip install pyperclip
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed pyperclip...
+
 pip install tqdm
-echo tqdm installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed tqdm...
 
-echo Installing requests... 7/10
+pip install flask
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed flask...
+
 pip install requests
-echo requests installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed requests...
 
-echo Installing beautifulsoup4... 8/10
 pip install beautifulsoup4
-echo beautifulsoup4 installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed beautifulsoup4...
 
-echo Installing lxml... 9/10
 pip install lxml
-echo lxml installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed lxml...
 
-echo Installing numpy... 10/10
 pip install numpy
-echo numpy installed.
+SET /a "count+=1"
+SET /a "calcPercent=count*100/total"
+echo [!calcPercent!%%] Installed numpy...
 
-echo Installation complete.
-echo You might now run !RUN.py
+echo [100%%] Installation complete.
 pause

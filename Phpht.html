@@ -64,7 +64,7 @@
         /* Enhanced glow effect when checked */
         .checkbox-input:checked + .custom-checkbox .checkmark {
             border-color: #00FF00;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Stronger glow effect */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); /* Stronger glow effect */
         }
 
 
@@ -76,17 +76,60 @@
             top: 0;
             left: 0;
             border-radius: 5px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: border-color 0.3s, box-shadow 0.4s;
         }
 
         .checkbox-container:hover .checkmark {
-            border-color: #00FF00;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            border-color: #1f1f1f;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
         }
+    
+    button {
+        background-color: #2b2b2b; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+        background-color: #0f0f0f;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.3);
+    }
     </style>
 </head>
 <body>
-<div class="container">
+    <style>
+        .urgent {
+            color: #ff0000;
+            text-align: center; /* Centers text horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* Adjust the height as needed */
+        }
+
+        .fix {
+            color: #00ff00;
+            text-align: center; /* Centers text horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* Adjust the height as needed */
+        }
+    </style>
+    
+    <p class="fix">
+        You can use multiple Phpht addons again!
+    </p>
+    <div class="container">
 <!-- Checkbox 1 -->
 <div class="checkbox-container">
 <label class="checkbox-label" for="checkbox1">
@@ -94,7 +137,7 @@
 <div class="custom-checkbox">
 <div class="checkmark"></div>
 </div>
-                Ban Bypass
+                Ping Bypass
             </label>
 </div>
 <!-- Checkbox 1 -->
@@ -127,7 +170,7 @@
                 Stickies
             </label>
 </div>
-<button type="submit">Submit</button></div><script src="BanBypass.py">
+<button type="submit">Submit</button></div><script src="PingBypass.py">
 function runScript(scriptName) {
     fetch('/run_' + scriptName)
     .then(response => response.text())
@@ -145,7 +188,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script><script src="NightTweaks.py"></script><script src="GroupTools.py"></script><script src="Sticky.py"></script>
-<script>
+
+    
+    
+    <script>
+        function createParticle(event) {
+            for (let i = 0; i < 100; i++) { // Creating 30 particles per click
+                const particle = document.createElement('particle');
+                document.body.appendChild(particle);
+                const size = Math.floor(Math.random() * 5 + 1); // Small particles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.background = `rgba(255, 255, 255, 0.9)`; // White, slightly opaque
+                particle.style.borderRadius = '50%';
+                particle.style.boxShadow = '0 0 69px rgba(255, 255, 255, 0.9)'; // Enhanced glow
+                const destinationX = (Math.random() - 0.5) * 300; // Random direction
+                const destinationY = (Math.random() - 0.5) * 300;
+
+                particle.style.position = 'fixed';
+                particle.style.zIndex = 1000;
+                particle.style.pointerEvents = 'none'; // Non-interactive particles
+
+                // Particle originating from button
+                const rect = event.target.getBoundingClientRect();
+                const btnCenterX = rect.left + rect.width / 2;
+                const btnCenterY = rect.top + rect.height / 2;
+
+                particle.style.transform = `translate(-100%, -100%) translate(${btnCenterX}px, ${btnCenterY}px)`;
+                particle.style.opacity = 1;
+
+                // Smooth transition for moving particles
+                particle.style.transition = 'transform 5s linear, opacity 5s';
+                setTimeout(() => {
+                    particle.style.transform = `translate(-100%, 100%) translate(${btnCenterX + destinationX}px, ${btnCenterY + destinationY}px)`;
+                    particle.style.opacity = 0; // Start fading out while moving
+                }, 100);
+
+                // Remove particle after transition
+                setTimeout(() => {
+                    particle.remove();
+                }, 60000); // Slightly longer to ensure fade-out completion
+            }
+        }
+
+        //const buttons = document.querySelectorAll('button');
+        //buttons.forEach(button => {
+            //button.addEventListener('click', createParticle);
+        //});
     function runScript(scriptName) {
         fetch('/run_' + scriptName)
         .then(response => response.text())
@@ -156,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('button[type="submit"]').addEventListener('click', function() {
             if (document.getElementById('checkbox1').checked) {
-                runScript('banbypass');
+                runScript('pingbypass');
             }
             if (document.getElementById('checkbox2').checked) {
                 runScript('nighttweaks');
@@ -169,7 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    </script>
+    </script>    
     
-</body>
+    
+    
+    
+    </body>
 </html>
