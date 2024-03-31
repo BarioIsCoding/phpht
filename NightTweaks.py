@@ -6,8 +6,6 @@ import re
 import asyncio
 from discord.ext import commands
 from datetime import datetime, timezone, timedelta
-import tkinter as tk
-from tkinter import ttk
 import threading
 import tqdm
 
